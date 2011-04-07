@@ -1,0 +1,21 @@
+/* I implement multiple array!!! */
+let
+	type arr = array of int
+	type arr1 = array of arr
+	var a := arr1[3] of arr[4] of 888
+
+	function printNum(num : int) = printi(num)
+
+in
+	printNum(a[2][3]);
+	for i := 0 to 2 do 
+		for j := 0 to 3 do 
+			a[i][j] := i + i + i + i + j; 
+
+	for i := 0 to 2 do 
+		for j := 0 to 3 do 
+			printNum(a[i][j]);
+
+	a[2][3]:=0;
+	printNum(a[2][3])
+end

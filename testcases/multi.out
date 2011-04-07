@@ -1,0 +1,3028 @@
+# IF.PC: 00000000
+# BRANCH: 0
+# Predict: 0
+# INS: 0c000007
+# 
+# IF.PC: 00000004
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 0000001c
+# BRANCH: 0
+# Predict: 0
+# INS: 03a0f020
+# 
+# IF.PC: 00000020
+# BRANCH: 0
+# Predict: 0
+# INS: 23bdffcc
+# 
+# IF.PC: 00000024
+# BRANCH: 0
+# Predict: 0
+# INS: afdfffe8
+# 
+# IF.PC: 00000028
+# BRANCH: 0
+# Predict: 0
+# INS: afd7ffec
+# 
+# IF.PC: 0000002c
+# BRANCH: 0
+# Predict: 0
+# INS: afd6fff0
+# 
+# IF.PC: 00000030
+# BRANCH: 0
+# Predict: 0
+# INS: afd5fff4
+# 
+# IF.PC: 00000034
+# BRANCH: 0
+# Predict: 0
+# INS: afd4fff8
+# 
+# IF.PC: 00000038
+# BRANCH: 0
+# Predict: 0
+# INS: afd3fffc
+# 
+# IF.PC: 0000003c
+# BRANCH: 0
+# Predict: 0
+# INS: 2004000c
+# 
+# IF.PC: 00000040
+# BRANCH: 0
+# Predict: 0
+# INS: 0c00008e
+# 
+# IF.PC: 00000044
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000238
+# BRANCH: 0
+# Predict: 0
+# INS: 03801020
+# 
+# IF.PC: 0000023c
+# BRANCH: 0
+# Predict: 0
+# INS: 0384e020
+# 
+# IF.PC: 00000240
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000244
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000048
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 0000004c
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 00000050
+# BRANCH: 0
+# Predict: 0
+# INS: 20140000
+# 
+# IF.PC: 00000054
+# BRANCH: 0
+# Predict: 0
+# INS: 20160002
+# 
+# IF.PC: 00000058
+# BRANCH: 0
+# Predict: 0
+# INS: 02960823
+# 
+# IF.PC: 0000005c
+# BRANCH: 0
+# Predict: 0
+# INS: 14200020
+# 
+# IF.PC: 00000060
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000000e0
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000000e4
+# BRANCH: 0
+# Predict: 0
+# INS: 0262a820
+# 
+# IF.PC: 000000e8
+# BRANCH: 0
+# Predict: 0
+# INS: 20040004
+# 
+# IF.PC: 000000ec
+# BRANCH: 0
+# Predict: 0
+# INS: 20050378
+# 
+# IF.PC: 000000f0
+# BRANCH: 0
+# Predict: 0
+# INS: 0c000084
+# 
+# IF.PC: 000000f4
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000210
+# BRANCH: 0
+# Predict: 0
+# INS: 00802080
+# 
+# IF.PC: 00000214
+# BRANCH: 0
+# Predict: 0
+# INS: 03801020
+# 
+# IF.PC: 00000218
+# BRANCH: 0
+# Predict: 0
+# INS: 0384e020
+# 
+# IF.PC: 0000021c
+# BRANCH: 0
+# Predict: 0
+# INS: 00401820
+# 
+# IF.PC: 00000220
+# BRANCH: 0
+# Predict: 0
+# INS: 00822020
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 0
+# INS: 1464fffd
+# 
+# IF.PC: 00000230
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 1
+# INS: 1464fffd
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 1
+# INS: 1464fffd
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 1
+# INS: 1464fffd
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000224
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000234
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000238
+# BRANCH: 0
+# Predict: 0
+# INS: 03801020
+# 
+# IF.PC: 00000238
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000000f8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000000fc
+# BRANCH: 0
+# Predict: 0
+# INS: aea20000
+# 
+# IF.PC: 00000100
+# BRANCH: 0
+# Predict: 0
+# INS: 22820001
+# 
+# IF.PC: 00000104
+# BRANCH: 0
+# Predict: 0
+# INS: 0040a020
+# 
+# IF.PC: 00000108
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 0000010c
+# BRANCH: 0
+# Predict: 0
+# INS: 1420fff4
+# 
+# IF.PC: 00000110
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000000e0
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000000e4
+# BRANCH: 0
+# Predict: 0
+# INS: 0262a820
+# 
+# IF.PC: 000000e8
+# BRANCH: 0
+# Predict: 0
+# INS: 20040004
+# 
+# IF.PC: 000000ec
+# BRANCH: 0
+# Predict: 0
+# INS: 20050378
+# 
+# IF.PC: 000000f0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000084
+# 
+# IF.PC: 00000210
+# BRANCH: 0
+# Predict: 0
+# INS: 00802080
+# 
+# IF.PC: 00000214
+# BRANCH: 0
+# Predict: 0
+# INS: 03801020
+# 
+# IF.PC: 00000218
+# BRANCH: 0
+# Predict: 0
+# INS: 0384e020
+# 
+# IF.PC: 0000021c
+# BRANCH: 0
+# Predict: 0
+# INS: 00401820
+# 
+# IF.PC: 00000220
+# BRANCH: 0
+# Predict: 0
+# INS: 00822020
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 1
+# INS: 1464fffd
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 1
+# INS: 1464fffd
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 1
+# INS: 1464fffd
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 1
+# INS: 1464fffd
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000224
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000234
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000238
+# BRANCH: 0
+# Predict: 0
+# INS: 03801020
+# 
+# IF.PC: 00000238
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000000f8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000000fc
+# BRANCH: 0
+# Predict: 0
+# INS: aea20000
+# 
+# IF.PC: 00000100
+# BRANCH: 0
+# Predict: 0
+# INS: 22820001
+# 
+# IF.PC: 00000104
+# BRANCH: 0
+# Predict: 0
+# INS: 0040a020
+# 
+# IF.PC: 00000108
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 0000010c
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff4
+# 
+# IF.PC: 000000e0
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000000e4
+# BRANCH: 0
+# Predict: 0
+# INS: 0262a820
+# 
+# IF.PC: 000000e8
+# BRANCH: 0
+# Predict: 0
+# INS: 20040004
+# 
+# IF.PC: 000000ec
+# BRANCH: 0
+# Predict: 0
+# INS: 20050378
+# 
+# IF.PC: 000000f0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000084
+# 
+# IF.PC: 00000210
+# BRANCH: 0
+# Predict: 0
+# INS: 00802080
+# 
+# IF.PC: 00000214
+# BRANCH: 0
+# Predict: 0
+# INS: 03801020
+# 
+# IF.PC: 00000218
+# BRANCH: 0
+# Predict: 0
+# INS: 0384e020
+# 
+# IF.PC: 0000021c
+# BRANCH: 0
+# Predict: 0
+# INS: 00401820
+# 
+# IF.PC: 00000220
+# BRANCH: 0
+# Predict: 0
+# INS: 00822020
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 1
+# INS: 1464fffd
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 1
+# INS: 1464fffd
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 1
+# INS: 1464fffd
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000228
+# BRANCH: 0
+# Predict: 0
+# INS: 20630004
+# 
+# IF.PC: 0000022c
+# BRANCH: 0
+# Predict: 1
+# INS: 1464fffd
+# 
+# IF.PC: 00000224
+# BRANCH: 0
+# Predict: 0
+# INS: ac650000
+# 
+# IF.PC: 00000224
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000234
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000238
+# BRANCH: 0
+# Predict: 0
+# INS: 03801020
+# 
+# IF.PC: 00000238
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000000f8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000000fc
+# BRANCH: 0
+# Predict: 0
+# INS: aea20000
+# 
+# IF.PC: 00000100
+# BRANCH: 0
+# Predict: 0
+# INS: 22820001
+# 
+# IF.PC: 00000104
+# BRANCH: 0
+# Predict: 0
+# INS: 0040a020
+# 
+# IF.PC: 00000108
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 0000010c
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff4
+# 
+# IF.PC: 000000e0
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000000e0
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000114
+# BRANCH: 0
+# Predict: 0
+# INS: 08000019
+# 
+# IF.PC: 00000118
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000064
+# BRANCH: 0
+# Predict: 0
+# INS: 0260a820
+# 
+# IF.PC: 00000068
+# BRANCH: 0
+# Predict: 0
+# INS: 8e620008
+# 
+# IF.PC: 0000006c
+# BRANCH: 0
+# Predict: 0
+# INS: 8c44000c
+# 
+# IF.PC: 00000070
+# BRANCH: 0
+# Predict: 0
+# INS: 0c000091
+# 
+# IF.PC: 00000074
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#        888
+# 
+# IF.PC: 00000078
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 0000007c
+# BRANCH: 0
+# Predict: 0
+# INS: 20030000
+# 
+# IF.PC: 00000080
+# BRANCH: 0
+# Predict: 0
+# INS: 20040002
+# 
+# IF.PC: 00000084
+# BRANCH: 0
+# Predict: 0
+# INS: 00640823
+# 
+# IF.PC: 00000088
+# BRANCH: 0
+# Predict: 0
+# INS: 14200024
+# 
+# IF.PC: 0000008c
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 0000011c
+# BRANCH: 0
+# Predict: 0
+# INS: 20020000
+# 
+# IF.PC: 00000120
+# BRANCH: 0
+# Predict: 0
+# INS: 20080003
+# 
+# IF.PC: 00000124
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000128
+# BRANCH: 0
+# Predict: 0
+# INS: 14200007
+# 
+# IF.PC: 0000012c
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 0
+# INS: 1420fff3
+# 
+# IF.PC: 0000017c
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 00000148
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000180
+# BRANCH: 0
+# Predict: 0
+# INS: 0800004c
+# 
+# IF.PC: 00000184
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000130
+# BRANCH: 0
+# Predict: 0
+# INS: 20630001
+# 
+# IF.PC: 00000134
+# BRANCH: 0
+# Predict: 0
+# INS: 00640823
+# 
+# IF.PC: 00000138
+# BRANCH: 0
+# Predict: 0
+# INS: 1420fff8
+# 
+# IF.PC: 0000013c
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 0000011c
+# BRANCH: 0
+# Predict: 0
+# INS: 20020000
+# 
+# IF.PC: 00000120
+# BRANCH: 0
+# Predict: 0
+# INS: 20080003
+# 
+# IF.PC: 00000124
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000128
+# BRANCH: 0
+# Predict: 1
+# INS: 14200007
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 00000148
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000180
+# BRANCH: 0
+# Predict: 1
+# INS: 0800004c
+# 
+# IF.PC: 00000130
+# BRANCH: 0
+# Predict: 0
+# INS: 20630001
+# 
+# IF.PC: 00000134
+# BRANCH: 0
+# Predict: 0
+# INS: 00640823
+# 
+# IF.PC: 00000138
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff8
+# 
+# IF.PC: 0000011c
+# BRANCH: 0
+# Predict: 0
+# INS: 20020000
+# 
+# IF.PC: 00000120
+# BRANCH: 0
+# Predict: 0
+# INS: 20080003
+# 
+# IF.PC: 00000124
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000128
+# BRANCH: 0
+# Predict: 1
+# INS: 14200007
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 0000014c
+# BRANCH: 0
+# Predict: 0
+# INS: 02a94820
+# 
+# IF.PC: 00000150
+# BRANCH: 0
+# Predict: 0
+# INS: 8d2a0000
+# 
+# IF.PC: 00000154
+# BRANCH: 0
+# Predict: 0
+# INS: 00404880
+# 
+# IF.PC: 00000158
+# BRANCH: 0
+# Predict: 0
+# INS: 01495020
+# 
+# IF.PC: 0000015c
+# BRANCH: 0
+# Predict: 0
+# INS: 00634820
+# 
+# IF.PC: 00000160
+# BRANCH: 0
+# Predict: 0
+# INS: 01234820
+# 
+# IF.PC: 00000168
+# BRANCH: 0
+# Predict: 0
+# INS: 01224820
+# 
+# IF.PC: 0000016c
+# BRANCH: 0
+# Predict: 0
+# INS: ad490000
+# 
+# IF.PC: 00000170
+# BRANCH: 0
+# Predict: 0
+# INS: 20420001
+# 
+# IF.PC: 00000174
+# BRANCH: 0
+# Predict: 0
+# INS: 00480823
+# 
+# IF.PC: 00000178
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 00000148
+# BRANCH: 0
+# Predict: 0
+# INS: 00604880
+# 
+# IF.PC: 00000148
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000180
+# BRANCH: 0
+# Predict: 1
+# INS: 0800004c
+# 
+# IF.PC: 00000130
+# BRANCH: 0
+# Predict: 0
+# INS: 20630001
+# 
+# IF.PC: 00000134
+# BRANCH: 0
+# Predict: 0
+# INS: 00640823
+# 
+# IF.PC: 00000138
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff8
+# 
+# IF.PC: 0000011c
+# BRANCH: 0
+# Predict: 0
+# INS: 20020000
+# 
+# IF.PC: 0000011c
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000140
+# BRANCH: 0
+# Predict: 0
+# INS: 08000024
+# 
+# IF.PC: 00000144
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000090
+# BRANCH: 0
+# Predict: 0
+# INS: 20140000
+# 
+# IF.PC: 00000094
+# BRANCH: 0
+# Predict: 0
+# INS: 20170002
+# 
+# IF.PC: 00000098
+# BRANCH: 0
+# Predict: 0
+# INS: 02970823
+# 
+# IF.PC: 0000009c
+# BRANCH: 0
+# Predict: 0
+# INS: 1420003a
+# 
+# IF.PC: 000000a0
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000188
+# BRANCH: 0
+# Predict: 0
+# INS: 20130000
+# 
+# IF.PC: 0000018c
+# BRANCH: 0
+# Predict: 0
+# INS: 20160003
+# 
+# IF.PC: 00000190
+# BRANCH: 0
+# Predict: 0
+# INS: 02760823
+# 
+# IF.PC: 00000194
+# BRANCH: 0
+# Predict: 0
+# INS: 14200008
+# 
+# IF.PC: 00000198
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 0
+# INS: 0c000091
+# 
+# IF.PC: 000001d4
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#          0
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 0
+# INS: 1420fff3
+# 
+# IF.PC: 000001ec
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000091
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#          1
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000091
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#          2
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000091
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#          3
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001b8
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000001f0
+# BRANCH: 0
+# Predict: 0
+# INS: 08000067
+# 
+# IF.PC: 000001f4
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 0000019c
+# BRANCH: 0
+# Predict: 0
+# INS: 22820001
+# 
+# IF.PC: 000001a0
+# BRANCH: 0
+# Predict: 0
+# INS: 0040a020
+# 
+# IF.PC: 000001a4
+# BRANCH: 0
+# Predict: 0
+# INS: 00570823
+# 
+# IF.PC: 000001a8
+# BRANCH: 0
+# Predict: 0
+# INS: 1420fff7
+# 
+# IF.PC: 000001ac
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000188
+# BRANCH: 0
+# Predict: 0
+# INS: 20130000
+# 
+# IF.PC: 0000018c
+# BRANCH: 0
+# Predict: 0
+# INS: 20160003
+# 
+# IF.PC: 00000190
+# BRANCH: 0
+# Predict: 0
+# INS: 02760823
+# 
+# IF.PC: 00000194
+# BRANCH: 0
+# Predict: 1
+# INS: 14200008
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000091
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#          4
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000091
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#          5
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000091
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#          6
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000091
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#          7
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001b8
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000001f0
+# BRANCH: 0
+# Predict: 1
+# INS: 08000067
+# 
+# IF.PC: 0000019c
+# BRANCH: 0
+# Predict: 0
+# INS: 22820001
+# 
+# IF.PC: 000001a0
+# BRANCH: 0
+# Predict: 0
+# INS: 0040a020
+# 
+# IF.PC: 000001a4
+# BRANCH: 0
+# Predict: 0
+# INS: 00570823
+# 
+# IF.PC: 000001a8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff7
+# 
+# IF.PC: 00000188
+# BRANCH: 0
+# Predict: 0
+# INS: 20130000
+# 
+# IF.PC: 0000018c
+# BRANCH: 0
+# Predict: 0
+# INS: 20160003
+# 
+# IF.PC: 00000190
+# BRANCH: 0
+# Predict: 0
+# INS: 02760823
+# 
+# IF.PC: 00000194
+# BRANCH: 0
+# Predict: 1
+# INS: 14200008
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000091
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#          8
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000091
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#          9
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000091
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#         10
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001bc
+# BRANCH: 0
+# Predict: 0
+# INS: 02a21020
+# 
+# IF.PC: 000001c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c430000
+# 
+# IF.PC: 000001c4
+# BRANCH: 0
+# Predict: 0
+# INS: 02601080
+# 
+# IF.PC: 000001c8
+# BRANCH: 0
+# Predict: 0
+# INS: 00621020
+# 
+# IF.PC: 000001cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8c440000
+# 
+# IF.PC: 000001d0
+# BRANCH: 0
+# Predict: 1
+# INS: 0c000091
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#         11
+# 
+# IF.PC: 000001d8
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000001dc
+# BRANCH: 0
+# Predict: 0
+# INS: 22620001
+# 
+# IF.PC: 000001e0
+# BRANCH: 0
+# Predict: 0
+# INS: 00409820
+# 
+# IF.PC: 000001e4
+# BRANCH: 0
+# Predict: 0
+# INS: 00560823
+# 
+# IF.PC: 000001e8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff3
+# 
+# IF.PC: 000001b8
+# BRANCH: 0
+# Predict: 0
+# INS: 02801080
+# 
+# IF.PC: 000001b8
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000001f0
+# BRANCH: 0
+# Predict: 1
+# INS: 08000067
+# 
+# IF.PC: 0000019c
+# BRANCH: 0
+# Predict: 0
+# INS: 22820001
+# 
+# IF.PC: 000001a0
+# BRANCH: 0
+# Predict: 0
+# INS: 0040a020
+# 
+# IF.PC: 000001a4
+# BRANCH: 0
+# Predict: 0
+# INS: 00570823
+# 
+# IF.PC: 000001a8
+# BRANCH: 0
+# Predict: 1
+# INS: 1420fff7
+# 
+# IF.PC: 00000188
+# BRANCH: 0
+# Predict: 0
+# INS: 20130000
+# 
+# IF.PC: 00000188
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000001b0
+# BRANCH: 0
+# Predict: 0
+# INS: 08000029
+# 
+# IF.PC: 000001b4
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000000a4
+# BRANCH: 0
+# Predict: 0
+# INS: 8ea20008
+# 
+# IF.PC: 000000a8
+# BRANCH: 0
+# Predict: 0
+# INS: ac40000c
+# 
+# IF.PC: 000000ac
+# BRANCH: 0
+# Predict: 0
+# INS: 8ea20008
+# 
+# IF.PC: 000000b0
+# BRANCH: 0
+# Predict: 0
+# INS: 8c44000c
+# 
+# IF.PC: 000000b4
+# BRANCH: 0
+# Predict: 0
+# INS: 0c000091
+# 
+# IF.PC: 000000b8
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 00000244
+# BRANCH: 0
+# Predict: 0
+# INS: 20020001
+# 
+# IF.PC: 00000248
+# BRANCH: 0
+# Predict: 0
+# INS: ac04fffc
+# 
+# IF.PC: 0000024c
+# BRANCH: 0
+# Predict: 0
+# INS: 03e00008
+# 
+# IF.PC: 00000250
+# BRANCH: 0
+# Predict: 0
+# INS: 20020004
+# 
+# IF.PC: 00000250
+# BRANCH: 1
+# Predict: 0
+# INS: 00000000
+#          0
+# 
+# IF.PC: 000000bc
+# BRANCH: 0
+# Predict: 0
+# INS: 23be0034
+# 
+# IF.PC: 000000c0
+# BRANCH: 0
+# Predict: 0
+# INS: 8fd3fffc
+# 
+# IF.PC: 000000c4
+# BRANCH: 0
+# Predict: 0
+# INS: 8fd4fff8
+# 
+# IF.PC: 000000c8
+# BRANCH: 0
+# Predict: 0
+# INS: 8fd5fff4
+# 
+# IF.PC: 000000cc
+# BRANCH: 0
+# Predict: 0
+# INS: 8fd6fff0
+# 
+# IF.PC: 000000d0
+# BRANCH: 0
+# Predict: 0
+# INS: 8fd7ffec
+# 
+# IF.PC: 000000d4
+# BRANCH: 0
+# Predict: 0
+# INS: 8fdfffe8
+# 
+# IF.PC: 000000d8
+# BRANCH: 0
+# Predict: 0
+# INS: 0800007e
+# 
+# IF.PC: 000000dc
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 000001f8
+# BRANCH: 0
+# Predict: 0
+# INS: 03c0e820
+# 
+# IF.PC: 000001fc
+# BRANCH: 0
+# Predict: 0
+# INS: 00000000
+# 
+# IF.PC: 0000020c
+# BRANCH: 0
+# Predict: 0
+# INS: fc000000

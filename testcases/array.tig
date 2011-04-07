@@ -1,0 +1,10 @@
+let
+	var a := 100
+	type intArray = array of int
+	var d := intArray [a] of 19
+in
+	for i := 0 to a - 1 do
+		d[i] := i;
+	for i := 0 to a - 1 do
+		printi(d[i])
+end
