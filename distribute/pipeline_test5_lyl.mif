@@ -1,0 +1,17 @@
+DEPTH = 262144;           % Memory depth and width are required    %
+WIDTH = 32;           % Enter a decimal number                 %
+ADDRESS_RADIX = HEX;  % Address and value radixes are optional %
+DATA_RADIX = HEX;     % Enter BIN, DEC, HEX, or OCT; unless    %
+                      % otherwise specified, radixes = HEX     %
+CONTENT
+BEGIN
+[0..3FFFF] : 00000000; % Range--Every address from 0 to 1F = 00000000
+   0 :    201D0001; % 001000 00000 11101 00000 00000 000001 (0)			add	$sp,$zero,1 %
+   1 :    03A0ECC0; % 000000 11101 00000 11101 10011 000000 (4)			sll	$sp,$sp,19 %
+   2 :    8FA80000; % 100011 11101 01000 00000 00000 000000 (8)			lw	$t0,0($sp) %
+   3 :    8FA90004; % 100011 11101 01001 00000 00000 000100 (C)			lw	$t1,4($sp) %
+   4 :    20080002; % 001000 00000 01000 00000 00000 000010 (10)			add	$t0,$zero,2 %
+   5 :    20090001; % 001000 00000 01001 00000 00000 000001 (14)			add	$t1,$zero,1 %
+   6 :    01094020; % 000000 01000 01001 01000 00000 100000 (18)			add	$t0,$t0,$t1 %
+   7 :    AFA80000; % 101011 11101 01000 00000 00000 000000 (1C)			sw	$t0,0($sp) %
+END ;

@@ -2,9 +2,9 @@
 `include "controler.v"
 module CPU ();
 
-parameter FINISHPC = 131071;
-
-reg[31:0] 	PC, Regs[31:0], Mem[262143:0], // IMem[1023:0], DMem[1023:0], 
+parameter FINISHPC = 131071, MEMSIZE=262144;
+reg[31:0] 	i;
+reg[31:0] 	PC, Regs[31:0], Mem[MEMSIZE-1:0], // IMem[1023:0], DMem[1023:0], 
 			IFIDIR, IFIDPC4, 
 			IDEXA, IDEXB, IDEXIMM,
 			EXMEALU, EXMEB, 
@@ -14,7 +14,7 @@ reg[4:0]	IDEXDES, EXMEDES, MEWBDES;
 
 wire 		WPCIR, BRANCH, 
 			WREG, M2REG, WMEM, 
-			ALUIMM, SHIFT,IDEQU, SEXT, REGRT, JUMP;
+			ALUIMM, SHIFT,IDEQU, SEXT, REGRT, JUMP, JR, JAL;
 reg			EWREG, EM2REG, EWMEM,  EALUIMM, ESHIFT,
 			MWREG, MM2REG, MWMEM,
 			WWREG, WM2REG;
@@ -33,6 +33,7 @@ wire[4:0]	IDDES, EXDES, MEDES;
 //do before
 reg clock,microclock;
 initial begin
+for (i=0; i < MEMSIZE; i = i + 1) Mem[i] = {32{1'b0}};
 clock = 0;
 microclock = 0;
 PC = 0;
@@ -66,7 +67,7 @@ assign IDA = (FWDA == 'b00)? ((IDIR[25:21]==0)?0:Regs[IDIR[25:21]]):(FWDA == 'b0
 assign IDB = (FWDB == 'b00)? ((IDIR[20:16]==0)?0:Regs[IDIR[20:16]]):(FWDB == 'b01)?EXALU:(FWDB == 'b10)?MEALU:MEDATA;
 
 assign IDEQU = (IDA == IDB)? 1:0;
-assign PCBRANCH = (JUMP)? ({IDPC4[31:28],IDIR[25:0]}<<2) : IDPC4+ ( {{16{IDIR[15]}}, IDIR[15:0]} << 2);
+assign PCBRANCH = (JR)? Regs[IDIR[25:21]]:((JUMP)? ({IDPC4[31:28],IDIR[25:0]}<<2) : IDPC4+ ( {{16{IDIR[15]}}, IDIR[15:0]} << 2));
 assign IDIMM = (SEXT)? {{16{1'b0}}, IDIR[15:0]} :{{16{IDIR[15]}}, IDIR[15:0]};
 
 assign IDDES = (REGRT) ? IDIR[20:16] : IDIR[15:11];
@@ -94,18 +95,23 @@ assign WBALU = MEWBALU;
 assign WBWEDATA = (WM2REG) ? WBDATA : WBALU ; 
 
 //control
-Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP);
+Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP, JR, JAL);
 
 always @(posedge clock)
 begin
 	if (PC > FINISHPC) $finish;
-	$display("Time %0d! PC:%0d!IDIR:%0h,Mem[131072]:%0d ,reg8:%0d,reg9:%0d,rs %0d,rt %0d,IDA %0h,IDB %0h,IMM %0h,MEALU %0h,FWDA:%0b,FWDB:%0b,EWREG%0d,EXDES%0d ,ALUC %0b,EALUC,%0b,EXA %0h,EXB %0h,EXALU %0h,", $time, PC, IDIR, Mem[131072], Regs[8],Regs[9],IDIR[25:21],IDIR[20:16],IDA,IDB,IDIMM,MEALU,FWDA,FWDB,EWREG,EXDES,ALUC,EALUC,EXA,EXB,EXALU);
+	$display("Time %0d! PC:%d, IDIR:%h", $time, PC, IDIR);
+	//$display("Time %0d! PC:%0d!IDIR:%0h, rs %0d,rt %0d,IDA %0h,IDB %0h,IMM %0h,MEALU %0h,FWDA:%0b,FWDB:%0b,EWREG%0d,EXDES%0d ,ALUC %0b,EALUC,%0b,EXA %0h,EXB %0h,EXALU %0h,", $time, PC, IDIR,IDIR[25:21],IDIR[20:16],IDA,IDB,IDIMM,MEALU,FWDA,FWDB,EWREG,EXDES,ALUC,EALUC,EXA,EXB,EXALU);
 	$display("---");
 	//IFID
 	if (~WPCIR)	
 	begin
 		PC <= #1 PCNEXT;
-		if (~BRANCH) IFIDIR <= #1 IFIR; else IFIDIR <= #1 {32{1'b0}};
+		if (~BRANCH) IFIDIR <= #1 IFIR; 
+		else begin
+			IFIDIR <= #1 {32{1'b0}};
+			$display("# BRANCH to 'h%h ,and IFIDIR will be flushed", PCNEXT);
+		end
 		IFIDPC4 <= #1 IFPC4;
 	end
 	
@@ -145,12 +151,18 @@ always @(negedge clock)
 begin
 	if (WWREG) 
 	begin
-		$display("# Store 'h%0h in REG[%0d]",WBWEDATA,MEWBDES);
+		$display("# Store 'h%h in REG[%d]",WBWEDATA,MEWBDES);
 		Regs[MEWBDES] <= #1 WBWEDATA;
+	end
+	//i am lazy
+	if (JAL)
+	begin
+		$display("# JAL Store 'h%h in REG[%d]",WBWEDATA,MEWBDES);
+		Regs[31] <= #1 IDPC4;
 	end
 	if (MWMEM)
 	begin	
-		$display("# Store 'h%0h in MEM[%0h]",MEB,MEALU>>2);
+		$display("# Store 'h%h in MEM[%h]",MEB,MEALU>>2);
 		Mem[MEALU>>2] <= #1 MEB;
 	end
 end
