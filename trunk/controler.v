@@ -1,13 +1,13 @@
-module Controler(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP);
+module Controler(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP, JR, JAL);
 
 input[31:0]	IDIR;
 input[4:0]	MEDES, EXDES;
 input 		IDEQU, EWREG, EM2REG, MWREG, MM2REG;
 
-output		WPCIR, BRANCH, WREG, M2REG, WMEM,SHIFT, ALUIMM, SEXT, REGRT, JUMP;
+output		WPCIR, BRANCH, WREG, M2REG, WMEM,SHIFT, ALUIMM, SEXT, REGRT, JUMP, JR, JAL;
 output[1:0]	FWDB, FWDA;
 output[3:0]	ALUC;
-reg			WPCIR, BRANCH, WREG, M2REG, WMEM,SHIFT, ALUIMM, SEXT, REGRT, JUMP;
+reg			WPCIR, BRANCH, WREG, M2REG, WMEM,SHIFT, ALUIMM, SEXT, REGRT, JUMP, JR, JAL;
 reg[1:0]	FWDB, FWDA;
 reg[3:0]	ALUC;
 
@@ -24,7 +24,7 @@ assign imm = IDIR[15:0];
 
 always	@(op, funct, rs, rt, imm, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG)
 begin
-	$display("Time %0d:IDIR%h op%h funct%h rs%h rt%h imm%h MEDES%h EXDES%h IDEQU%h EWREG%h EM2REG%h MWREG%h MM2REG%h WPCIR%h BRANCH%h WREG%h M2REG%h WMEM%h ALUC%h SHIFT%h ALUIMM%h SEXT%h REGRT%h FWDB%h FWDA%h JUMP%h",$time,IDIR,op,funct,rs,rt,imm,MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP);
+	//$display("Time %0d:IDIR%h op%h funct%h rs%h rt%h imm%h MEDES%h EXDES%h IDEQU%h EWREG%h EM2REG%h MWREG%h MM2REG%h WPCIR%h BRANCH%h WREG%h M2REG%h WMEM%h ALUC%h SHIFT%h ALUIMM%h SEXT%h REGRT%h FWDB%h FWDA%h JUMP%h JR%h",$time,IDIR,op,funct,rs,rt,imm,MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP,JR);
 	WPCIR = 0;
 	BRANCH = 0;
 	WREG = 0;
@@ -37,6 +37,8 @@ begin
 	SEXT = 0;
 	REGRT = 0;
 	JUMP = 0;
+	JR = 0;
+	JAL = 0;
 	
 	case (op)
 		'h0: begin //do with function
@@ -102,6 +104,11 @@ begin
 				6'h22:begin//subtract unsigned
 				WREG = 1;
 				ALUC = 'b1110;
+				end
+				
+				6'h08:begin//jump register
+				JR = 1;
+				BRANCH =1;
 				end
 				
 				default:begin
@@ -234,6 +241,13 @@ begin
 		JUMP = 1;
 		BRANCH = 1;
 		end
+		
+		'h3:begin //jump and link
+		 JUMP = 1;
+		 BRANCH = 1;
+		 JAL = 1;
+		 //i am lazy
+		 end
 		
 		'h23:begin//load word
 		//forward
