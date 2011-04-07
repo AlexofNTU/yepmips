@@ -1,0 +1,9 @@
+let
+	var a := 100
+	function sum(a: int): int =
+		if a = 1 then 1
+		else a + sum(a - 1)
+in
+	printi(sum(a))
+end
+	

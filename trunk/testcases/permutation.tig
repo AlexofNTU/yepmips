@@ -1,0 +1,25 @@
+let
+	var n := 3
+	type intArray = array of int
+	var d := intArray [n] of 0
+
+	function printAll() =
+	(
+		for i := 0 to n - 1 do
+			printi(d[i]);
+		printi(0)
+	)
+	function f(a: int) =
+		if a = 0 then
+			printAll()
+		else
+			for i := 0 to n - 1 do
+				if d[i] = 0 then
+				(
+					d[i] := a;
+					f(a - 1);
+					d[i] := 0
+				)
+in
+	f(n)
+end
