@@ -63,14 +63,14 @@ assign PCNEXT = (BRANCH)? PCBRANCH : IFPC4;
 assign IDIR = IFIDIR;
 assign IDPC4 = IFIDPC4;
 
-assign IDA = (FWDA == 'b00)? ((IDIR[25:21]==0)?0:Regs[IDIR[25:21]]):(FWDA == 'b01)?EXALU:(FWDA == 'b10)?MEALU:MEDATA;
+assign IDA = (JAL)? IDPC4:((FWDA == 'b00)? ((IDIR[25:21]==0)?0:Regs[IDIR[25:21]]):(FWDA == 'b01)?EXALU:(FWDA == 'b10)?MEALU:MEDATA);
 assign IDB = (FWDB == 'b00)? ((IDIR[20:16]==0)?0:Regs[IDIR[20:16]]):(FWDB == 'b01)?EXALU:(FWDB == 'b10)?MEALU:MEDATA;
 
 assign IDEQU = (IDA == IDB)? 1:0;
 assign PCBRANCH = (JR)? Regs[IDIR[25:21]]:((JUMP)? ({IDPC4[31:28],IDIR[25:0]}<<2) : IDPC4+ ( {{16{IDIR[15]}}, IDIR[15:0]} << 2));
 assign IDIMM = (SEXT)? {{16{1'b0}}, IDIR[15:0]} :{{16{IDIR[15]}}, IDIR[15:0]};
 
-assign IDDES = (REGRT) ? IDIR[20:16] : IDIR[15:11];
+assign IDDES = (JAL)? 5'b11111 :((REGRT) ? IDIR[20:16] : IDIR[15:11]);
 
 //EX
 assign EXA = IDEXA;//(ESHITF)?EXIMM:
@@ -154,12 +154,7 @@ begin
 		$display("# Store 'h%h in REG[%d]",WBWEDATA,MEWBDES);
 		Regs[MEWBDES] <= #1 WBWEDATA;
 	end
-	//i am lazy
-	if (JAL)
-	begin
-		$display("# JAL Store 'h%h in REG[%d]",WBWEDATA,MEWBDES);
-		Regs[31] <= #1 IDPC4;
-	end
+	
 	if (MWMEM)
 	begin	
 		$display("# Store 'h%h in MEM[%h]",MEB,MEALU>>2);
