@@ -113,7 +113,7 @@ begin
 				
 				6'h08:begin//jump register
 				JR = 1;
-				BRANCH =1;
+				BRANCH = 1;
 				end
 				
 				default:begin
@@ -126,6 +126,8 @@ begin
 				WREG = 0;
 				M2REG = 0;
 				WMEM = 0;
+				JR = 0;
+				//BRANCH = 0;
 			end					
 		end
 		

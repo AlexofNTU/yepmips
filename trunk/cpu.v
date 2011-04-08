@@ -67,7 +67,7 @@ assign IDA = (JAL)? IDPC4:((FWDA == 'b00)? ((IDIR[25:21]==0)?0:Regs[IDIR[25:21]]
 assign IDB = (FWDB == 'b00)? ((IDIR[20:16]==0)?0:Regs[IDIR[20:16]]):(FWDB == 'b01)?EXALU:(FWDB == 'b10)?MEALU:MEDATA;
 
 assign IDEQU = (IDA == IDB)? 1:0;
-assign PCBRANCH = (JR)? Regs[IDIR[25:21]]:((JUMP)? ({IDPC4[31:28],IDIR[25:0]}<<2) : IDPC4+ ( {{16{IDIR[15]}}, IDIR[15:0]} << 2));
+assign PCBRANCH = (JR)? IDA:((JUMP)? ({IDPC4[31:28],IDIR[25:0]}<<2) : IDPC4+ ( {{16{IDIR[15]}}, IDIR[15:0]} << 2));
 assign IDIMM = (SEXT)? {{16{1'b0}}, IDIR[15:0]} :{{16{IDIR[15]}}, IDIR[15:0]};
 
 assign IDDES = (JAL)? 5'b11111 :((REGRT) ? IDIR[20:16] : IDIR[15:11]);
@@ -100,7 +100,7 @@ Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR,
 always @(posedge clock)
 begin
 	if (PC > FINISHPC) $finish;
-	$display("Time %0d! PC:%d, IDIR:%h", $time, PC, IDIR);
+	$display("Time %0d! PC:%h, IDIR:%h, FWDA:%0b,FWDB:%0b", $time, PC, IDIR, FWDA,FWDB);
 	//$display("Time %0d! PC:%0d!IDIR:%0h, rs %0d,rt %0d,IDA %0h,IDB %0h,IMM %0h,MEALU %0h,FWDA:%0b,FWDB:%0b,EWREG%0d,EXDES%0d ,ALUC %0b,EALUC,%0b,EXA %0h,EXB %0h,EXALU %0h,", $time, PC, IDIR,IDIR[25:21],IDIR[20:16],IDA,IDB,IDIMM,MEALU,FWDA,FWDB,EWREG,EXDES,ALUC,EALUC,EXA,EXB,EXALU);
 	$display("---");
 	//IFID
