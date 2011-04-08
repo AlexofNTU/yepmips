@@ -42,7 +42,13 @@ begin
 	//join
 	if (EALUC == 4'b1111)
 		EXALU = {EXB[15:0],16'b0};
-		
+	//jal
+	if (EALUC == 4'b0100)
+		EXALU = EXA;
+	//nor
+	if (EALUC == 4'b1010)
+		EXALU = ~(EXA | EXB);
+	
 	$display("# The ALU is RUNNING with 'h%h & 'h%h in OP 'b%b to RESULT 'h%h", EXA,EXB,EALUC,EXALU);
 end
 

@@ -81,6 +81,11 @@ begin
 				ALUC = 'b0000;
 				end
 				
+				6'h27:begin//nor
+				WREG = 1;
+				ALUC = 'b1010;
+				end
+				
 				6'h25:begin//or
 				WREG = 1;
 				ALUC = 'b0001;
@@ -246,7 +251,8 @@ begin
 		 JUMP = 1;
 		 BRANCH = 1;
 		 JAL = 1;
-		 //i am lazy
+		 ALUC = 'b0100;
+		 WREG = 1;
 		 end
 		
 		'h23:begin//load word
