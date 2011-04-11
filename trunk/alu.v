@@ -20,7 +20,11 @@ begin
 		EXALU = EXA | EXB;
 	//less than
 	if (EALUC == 4'b0111)//TODO is signed!
+	begin
 		EXALU = (EXA < EXB)? 1:0;
+		if (EXA[31]==1 && EXB[31]==0) EXALU = 1;
+		if (EXA[31]==0 && EXB[31]==1) EXALU = 0;
+	end
 	//xor
 	if (EALUC == 4'b1100)
 		EXALU =  EXA ^ EXB;
