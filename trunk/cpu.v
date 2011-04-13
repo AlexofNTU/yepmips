@@ -12,7 +12,7 @@ reg[31:0] 	PC, Regs[31:0], Mem[MEMSIZE-1:0], // IMem[1023:0], DMem[1023:0],
 			
 reg[4:0]	IDEXDES, EXMEDES, MEWBDES;
 
-wire 		WPCIR, BRANCH, 
+wire 		WPCIR, BRANCH, SMC,
 			WREG, M2REG, WMEM, 
 			ALUIMM, SHIFT,IDEQU, SEXT, REGRT, JUMP, JR, JAL;
 reg			EWREG, EM2REG, EWMEM,  EALUIMM, ESHIFT,
@@ -96,7 +96,7 @@ assign WBALU = MEWBALU;
 assign WBWEDATA = (WM2REG) ? WBDATA : WBALU ; 
 
 //control
-Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP, JR, JAL);
+Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP, JR, JAL, EWMEM, EXALU, IDPC ,SMC);
 
 always @(PC)
 begin
@@ -114,14 +114,22 @@ begin
 	if (~WPCIR)	
 	begin
 		PC <= #1 PCNEXT;
+		IFIDPC4 <= #1 IFPC4;
+		IFIDPC <= #1 IFPC;
 		if (~BRANCH) IFIDIR <= #1 IFIR; 
 		else begin
+			IFIDPC <= #1 {32{1'b1}};
 			IFIDIR <= #1 {32{1'b0}};
 			$display("# BRANCH to 'h%h ,and IFIDIR will be flushed", PCNEXT);
 		end
-		IFIDPC4 <= #1 IFPC4;
+		
 	end
-	
+	if (WPCIR && SMC)
+	begin
+		$display("# SMC: 'h%h change to 'h%h at PC 'h%h", IFIDIR, IDEXB , IDPC);
+		IFIDIR <= #1 IDEXB;
+		
+	end
 	//IDEX
 	IDEXA <= #1 IDA;
 	IDEXB <= #1 IDB;
