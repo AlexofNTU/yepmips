@@ -280,3 +280,13 @@ Time 266! PC:0000006c, IDIR:03e00008, FWDA:11,FWDB:0
 # BRANCH to 'h20100003 ,and IFIDIR will be flushed
 # The ALU is RUNNING with 'h20100003 & 'h00000000 in OP 'b0010 to RESULT 'h20100003
 # Store 'h20100003 in REG[31]
+Time 270! PC:20100003, IDIR:00000000, FWDA:0,FWDB:0
+---
+# The ALU is RUNNING with 'h00000000 & 'h00000000 in OP 'b1000 to RESULT 'h00000000
+# Store 'h201d0001 in REG[29]
+Time 274! PC:20100007, IDIR:xxxxxxxx, FWDA:0,FWDB:0
+---
+# The ALU is RUNNING with 'hxxxxxxxx & 'h00000000 in OP 'b1000 to RESULT 'hxxxxxxxx
+# The ALU is RUNNING with 'hxxxxxxxx & 'hxxxxxxxx in OP 'b1000 to RESULT 'hxxxxxxxx
+Time 278! PC:2010000b, IDIR:xxxxxxxx, FWDA:0,FWDB:0
+---
