@@ -5,7 +5,7 @@ module CPU ();
 parameter FINISHPC = 131071, MEMSIZE=262144;
 reg[31:0] 	i;
 reg[31:0] 	PC, Regs[31:0], Mem[MEMSIZE-1:0], // IMem[1023:0], DMem[1023:0], 
-			IFIDIR, IFIDPC4, 
+			IFIDIR, IFIDPC, IFIDPC4, 
 			IDEXA, IDEXB, IDEXIMM,
 			EXMEALU, EXMEB, 
 			MEWBDATA, MEWBALU;
@@ -23,7 +23,7 @@ reg[3:0]	EALUC;
 wire[3:0]	ALUC;
 
 wire[31:0]	IFPC, IFPC4, IFIR, PCNEXT,
-			IDIR, IDPC4, IDA, IDB, PCBRANCH, IDIMM,
+			IDPC,IDIR, IDPC4, IDA, IDB, PCBRANCH, IDIMM,
 			EXA, EXB, EXIMM, EXALU, 
 			MEALU, MEB, MEDATA,
 			WBDATA, WBALU, WBWEDATA;
@@ -60,6 +60,7 @@ assign IFIR = Mem[PC>>2];
 assign PCNEXT = (BRANCH)? PCBRANCH : IFPC4;
 
 //ID
+assign IDPC = IFIDPC;
 assign IDIR = IFIDIR;
 assign IDPC4 = IFIDPC4;
 
@@ -97,12 +98,18 @@ assign WBWEDATA = (WM2REG) ? WBDATA : WBALU ;
 //control
 Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP, JR, JAL);
 
+always @(PC)
+begin
+	if (PC > FINISHPC) #12 $finish;
+end
+
 always @(posedge clock)
 begin
-	if (PC > FINISHPC) $finish;
+	
 	$display("Time %0d! PC:%h, IDIR:%h, FWDA:%0b,FWDB:%0b", $time, PC, IDIR, FWDA,FWDB);
 	//$display("Time %0d! PC:%0d!IDIR:%0h, rs %0d,rt %0d,IDA %0h,IDB %0h,IMM %0h,MEALU %0h,FWDA:%0b,FWDB:%0b,EWREG%0d,EXDES%0d ,ALUC %0b,EALUC,%0b,EXA %0h,EXB %0h,EXALU %0h,", $time, PC, IDIR,IDIR[25:21],IDIR[20:16],IDA,IDB,IDIMM,MEALU,FWDA,FWDB,EWREG,EXDES,ALUC,EALUC,EXA,EXB,EXALU);
 	$display("---");
+
 	//IFID
 	if (~WPCIR)	
 	begin
