@@ -400,31 +400,3 @@ begin
 end
 endmodule
 
-
-module CtrlALU(op, func, opcode);
-input[5:0] op, func;
-output[3:0] opcode;
-reg[3:0] opcode;
-
-always @(op or func)
-begin
-
-if (op == 0)
-begin
-	if (func == 'h20) opcode = 'b0010;
-	if (func == 'h24) opcode = 'b0000;
-	if (func == 'h23) opcode = 'b0010;
-	if (func == 'h25) opcode = 'b0001;
-	if (func == 'h2a) opcode = 'b0111;
-	if (func == 'h22) opcode = 'b0110;
-end
-
-if (op == 'h8) opcode = 'b0010;
-if (op == 'hc) opcode = 'b0000;
-if (op == 'hd) opcode = 'b0001;
-if (op == 'ha) opcode = 'b0111;
-if (op == 'h2b) opcode = 'b0010;
-
-end
-
-endmodule
