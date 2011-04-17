@@ -34,6 +34,7 @@ wire[4:0]	IDDES, EXDES, MEDES;
 reg clock,microclock;
 initial begin
 for (i=0; i < MEMSIZE; i = i + 1) Mem[i] = {32{1'b0}};
+for (i=0; i < 32; i = i + 1) Regs[i] = {32{1'b0}};
 clock = 0;
 microclock = 0;
 PC = 0;
