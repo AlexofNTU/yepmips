@@ -2,9 +2,10 @@
 `include "controler.v"
 module CPU ();
 
-parameter FINISHPC = 131071, MEMSIZE=262144;
+parameter FINISHPC = 524288, MEMSIZE=1048576;
 reg[31:0] 	i;
-reg[31:0] 	PC, Regs[31:0], Mem[MEMSIZE-1:0], // IMem[1023:0], DMem[1023:0], 
+reg[7:0]	Mem[MEMSIZE-1:0];
+reg[31:0] 	PC, Regs[31:0],  // IMem[1023:0], DMem[1023:0], 
 			IFIDIR, IFIDPC, IFIDPC4, 
 			IDEXA, IDEXB, IDEXIMM,
 			EXMEALU, EXMEB, 
@@ -33,7 +34,7 @@ wire[4:0]	IDDES, EXDES, MEDES;
 //do before
 reg clock,microclock;
 initial begin
-for (i=0; i < MEMSIZE; i = i + 1) Mem[i] = {32{1'b0}};
+for (i=0; i < MEMSIZE; i = i + 1) Mem[i] = {8{1'b0}};
 for (i=0; i < 32; i = i + 1) Regs[i] = {32{1'b0}};
 clock = 0;
 microclock = 0;
@@ -48,7 +49,7 @@ MWMEM = 0;
 WWREG = 0;
 WM2REG = 0;
 
-$readmemh("mem.txt",Mem);
+$readmemb("example.mif",Mem);
 //TODO
 end
 always #2 clock = (~clock); 
@@ -57,7 +58,7 @@ always #1 microclock = (~microclock);
 //IF
 assign IFPC = PC;
 assign IFPC4 = PC + 4;
-assign IFIR = (SMC2)? IDEXB : Mem[PC>>2];
+assign IFIR = (SMC2)? IDEXB : {Mem[PC], Mem[PC+1], Mem[PC+2], Mem[PC+3]};
 assign PCNEXT = (BRANCH)? PCBRANCH : IFPC4;
 
 //ID
@@ -89,7 +90,7 @@ assign MEB = EXMEB;
 
 assign MEDES = EXMEDES;
 
-assign MEDATA = Mem[MEALU>>2];
+assign MEDATA = {Mem[MEALU], Mem[MEALU+1] ,Mem[MEALU+2] ,Mem[MEALU+3]} ;
 
 //WB
 assign WBDATA = MEWBDATA;
@@ -174,7 +175,7 @@ begin
 	if (MWMEM)
 	begin	
 		$display("# Store 'h%h in MEM[%h]",MEB,MEALU>>2);
-		Mem[MEALU>>2] <= #1 MEB;
+		{Mem[MEALU], Mem[MEALU+1] ,Mem[MEALU+2] ,Mem[MEALU+3]} <= #1 MEB;
 	end
 end
 
