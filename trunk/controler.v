@@ -1,13 +1,13 @@
-module Controler(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP, JR, JAL, EWMEM, EXALU, IFPC, IDPC ,SMC ,SMC2);
+module Controler(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP, JR, JAL, EWMEM, EXALU, IFPC, IDPC ,SMC ,SMC2, DBP ,DBPS);
 
 input[31:0]	IDIR, EXALU, IFPC, IDPC;
 input[4:0]	MEDES, EXDES;
 input 		IDEQU, EWREG, EM2REG, MWREG, MM2REG, EWMEM;
 
-output		WPCIR, BRANCH, WREG, M2REG, WMEM,SHIFT, ALUIMM, SEXT, REGRT, JUMP, JR, JAL, SMC, SMC2;
+output		WPCIR, BRANCH, WREG, M2REG, WMEM,SHIFT, ALUIMM, SEXT, REGRT, JUMP, JR, JAL, SMC, SMC2, DBP, DBPS;
 output[1:0]	FWDB, FWDA;
 output[3:0]	ALUC;
-reg			WPCIR, BRANCH, WREG, M2REG, WMEM,SHIFT, ALUIMM, SEXT, REGRT, JUMP, JR, JAL, SMC, SMC2;
+reg			WPCIR, BRANCH, WREG, M2REG, WMEM,SHIFT, ALUIMM, SEXT, REGRT, JUMP, JR, JAL, SMC, SMC2, DBP, DBPS;
 reg[1:0]	FWDB, FWDA;
 reg[3:0]	ALUC;
 
@@ -21,7 +21,7 @@ assign rs = IDIR[25:21];
 assign rt = IDIR[20:16];
 assign imm = IDIR[15:0];
 
-
+initial begin DBP = 0; end
 always	@(op, funct, rs, rt, imm, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG)
 begin
 	//$display("Time %0d:IDIR%h op%h funct%h rs%h rt%h imm%h MEDES%h EXDES%h IDEQU%h EWREG%h EM2REG%h MWREG%h MM2REG%h WPCIR%h BRANCH%h WREG%h M2REG%h WMEM%h ALUC%h SHIFT%h ALUIMM%h SEXT%h REGRT%h FWDB%h FWDA%h JUMP%h JR%h",$time,IDIR,op,funct,rs,rt,imm,MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP,JR);
@@ -41,6 +41,7 @@ begin
 	JAL = 0;
 	SMC = 0;
 	SMC2 = 0;
+	DBPS = 1;
 	
 	case (op)
 		'h0: begin //do with function
@@ -206,10 +207,19 @@ begin
 		if (EWREG && (rt != 0) && (rt == EXDES)) FWDB = 'b01;
 		if (MWREG && MM2REG && (rt != 0) && (rt == MEDES)) FWDB = 'b11;
 		
-		if (IDEQU)
+		if (IDEQU && ~DBP)
 		begin
 			BRANCH = 1;
 			JUMP = 0;
+			DBPS = 1;
+			DBP = 1;
+		end
+		if (~IDEQU && DBP)
+		begin
+			BRANCH = 1;
+			JUMP = 0;
+			DBPS = 0;
+			DBP = 0;
 		end
 		//stall
 		if (EWREG && EM2REG && (((rs != 0) && (rs == EXDES)) || ((rt != 0) && (rt == EXDES))) )
@@ -231,10 +241,20 @@ begin
 		if (EWREG && (rt != 0) && (rt == EXDES)) FWDB = 'b01;
 		if (MWREG && MM2REG && (rt != 0) && (rt == MEDES)) FWDB = 'b11;
 		
-		if (~IDEQU)
+		if (~IDEQU && ~DBP)
 		begin
 			BRANCH = 1;
 			JUMP = 0;
+			DBPS = 1;
+			DBP = 1;
+		end
+		
+		if (IDEQU && DBP)
+		begin
+			BRANCH = 1;
+			JUMP = 0;
+			DBPS = 0;
+			DBP = 0;
 		end
 		//stall
 		if (EWREG && EM2REG && (((rs != 0) && (rs == EXDES)) || ((rt != 0) && (rt == EXDES))) )
