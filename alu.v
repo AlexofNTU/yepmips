@@ -53,7 +53,7 @@ begin
 	if (EALUC == 4'b1010)
 		EXALU = ~(EXA | EXB);
 	
-	$display("# The ALU is RUNNING with 'h%h & 'h%h in OP 'b%b to RESULT 'h%h", EXA,EXB,EALUC,EXALU);
+	//$display("# The ALU is RUNNING with 'h%h & 'h%h in OP 'b%b to RESULT 'h%h", EXA,EXB,EALUC,EXALU);
 end
 
 endmodule
