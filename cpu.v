@@ -102,7 +102,16 @@ Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR,
 
 always @(PC)
 begin
-	if (PC > FINISHPC) #12 $finish;
+	if (PC > FINISHPC)
+	begin
+	for (i = 0; i < 32; i = i + 1 )
+	$display("%d in REG[%d]",Regs[i],i);
+	for (i = 524288; i < 524400; i = i + 1 )
+	$display("%d in MEM[%d]",Mem[i],i);
+	for (i = 0; i < 8; i = i + 1 )
+	$display("%d in MEM[%d]",Mem[i],i);
+	$finish;
+	end
 end
 
 always @(posedge clock)
