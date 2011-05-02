@@ -14,7 +14,7 @@ reg[31:0] 	PC, Regs[31:0],  // IMem[1023:0], DMem[1023:0],
 			
 reg[4:0]	IDEXDES, EXMEDES, MEWBDES;
 
-wire 		WPCIR, BRANCH, SMC, SMC2,
+wire 		WPCIR, BRANCH, SMC, SMC2, DBP, DBPS,
 			WREG, M2REG, WMEM, 
 			ALUIMM, SHIFT,IDEQU, SEXT, REGRT, JUMP, JR, JAL;
 reg			EWREG, EM2REG, EWMEM,  EALUIMM, ESHIFT,
@@ -67,7 +67,7 @@ always #2 if (MEMbusy==0 || clock==1) clock = (~clock);
 assign IFPC = PC;
 assign IFPC4 = PC + 4;
 assign IFIR = (SMC2)? IDEXB : IFIRreg;//{Mem[PC], Mem[PC+1], Mem[PC+2], Mem[PC+3]};//!
-assign PCNEXT = (BRANCH)? PCBRANCH : IFPC4;
+assign PCNEXT = (BRANCH)? PCBRANCH : ( ( (IFIR[31:26] == 'h4 || IFIR[31:26] == 'h5) && DBP)? IFPC4+( {{16{IFIR[15]}}, IFIR[15:0]} << 2) : IFPC4 );
 
 //ID
 assign IDPC = IFIDPC;
@@ -78,7 +78,7 @@ assign IDA = (JAL)? IDPC4:((FWDA == 'b00)? ((IDIR[25:21]==0)?0:Regs[IDIR[25:21]]
 assign IDB = (FWDB == 'b00)? ((IDIR[20:16]==0)?0:Regs[IDIR[20:16]]):(FWDB == 'b01)?EXALU:(FWDB == 'b10)?MEALU:MEDATA;
 
 assign IDEQU = (IDA == IDB)? 1:0;
-assign PCBRANCH = (JR)? IDA:((JUMP)? ({IDPC4[31:28],IDIR[25:0]}<<2) : IDPC4+ ( {{16{IDIR[15]}}, IDIR[15:0]} << 2));
+assign PCBRANCH = (JR)? IDA:((JUMP)? ({IDPC4[31:28],IDIR[25:0]}<<2) : ((DBPS)?IDPC4+ ( {{16{IDIR[15]}}, IDIR[15:0]} << 2):IDPC4));
 assign IDIMM = (SEXT)? {{16{1'b0}}, IDIR[15:0]} :{{16{IDIR[15]}}, IDIR[15:0]};
 
 assign IDDES = (JAL)? 5'b11111 :((REGRT) ? IDIR[20:16] : IDIR[15:11]);
@@ -106,11 +106,11 @@ assign WBALU = MEWBALU;
 assign WBWEDATA = (WM2REG) ? WBDATA : WBALU ; 
 
 //control
-Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP, JR, JAL, EWMEM, EXALU, IFPC, IDPC ,SMC, SMC2);
+Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP, JR, JAL, EWMEM, EXALU, IFPC, IDPC ,SMC, SMC2, DBP ,DBPS);
 
 always @(PC)
 begin
-	if (PC > FINISHPC) #12
+	if (PC > FINISHPC) #200
 	begin
 	for (i = 0; i < 1024; i=i+1)
 		cache2[ {cache1add[9:0],i[9:0]} % 16384 ] = cache1[i];
@@ -143,7 +143,7 @@ begin
 		else begin
 			IFIDPC <=  {32{1'b1}};
 			IFIDIR <=  {32{1'b0}};
-			//$display("# BRANCH to 'h%h ,and IFIDIR will be flushed", PCNEXT);
+			$display("# BRANCH to 'h%h ,and IFIDIR will be flushed, DBP is %b", PCNEXT, DBP);
 		end
 		
 	end
@@ -250,7 +250,7 @@ begin
 					 cache1[i] = cache2[ {cache1add[9:0],i[9:0]} % 16384 ];
 			end//cache1
 			//MEMbusy = 0;
-			$display("MEDATAreg %h, MEALU %h", MEDATAreg,MEALU);
+			//$display("MEDATAreg %h, MEALU %h", MEDATAreg,MEALU);
 		end
 		
 			MEMbusy = 1;
@@ -284,7 +284,7 @@ begin
 					 cache1[i] = cache2[ {cache1add[9:0],i[9:0]} % 16384 ];
 			end//cache1
 			MEMbusy = 0;
-		$display("IFIRreg %h", IFIRreg);
+		//$display("IFIRreg %h", IFIRreg);
 	
 end
 
