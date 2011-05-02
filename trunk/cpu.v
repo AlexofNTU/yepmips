@@ -2,9 +2,10 @@
 `include "controler.v"
 module CPU ();
 
-parameter FINISHPC = 524288, MEMSIZE=1048576;
+parameter FINISHPC = 10000, MEMSIZE=1048576;
 reg[31:0] 	i;
-reg[7:0]	Mem[MEMSIZE-1:0];
+reg[7:0]	Mem[MEMSIZE-1:0], cache2[16383:0], cache1[1023:0];
+reg[31:0]	cache1add, cache2add;
 reg[31:0] 	PC, Regs[31:0],  // IMem[1023:0], DMem[1023:0], 
 			IFIDIR, IFIDPC, IFIDPC4, 
 			IDEXA, IDEXB, IDEXIMM,
@@ -23,6 +24,8 @@ wire[1:0]	FWDB, FWDA;
 reg[3:0]	EALUC;
 wire[3:0]	ALUC;
 
+reg			MEMbusy;
+reg[31:0]	IFIRreg, MEDATAreg;
 wire[31:0]	IFPC, IFPC4, IFIR, PCNEXT,
 			IDPC,IDIR, IDPC4, IDA, IDB, PCBRANCH, IDIMM,
 			EXA, EXB, EXIMM, EXALU, 
@@ -32,12 +35,12 @@ wire[31:0]	IFPC, IFPC4, IFIR, PCNEXT,
 wire[4:0]	IDDES, EXDES, MEDES;
 
 //do before
-reg clock,microclock;
+reg clock;
 initial begin
 for (i=0; i < MEMSIZE; i = i + 1) Mem[i] = {8{1'b0}};
 for (i=0; i < 32; i = i + 1) Regs[i] = {32{1'b0}};
 clock = 0;
-microclock = 0;
+MEMbusy = 0;
 PC = 0;
 IFIDIR = {32{1'b0}};
 EWREG = 0;
@@ -50,15 +53,20 @@ WWREG = 0;
 WM2REG = 0;
 
 $readmemb("example.mif",Mem);
+cache1add = 0;
+cache2add = 0;
+$display("# cache begin");
+for (i=0; i < 16384; i = i + 1) cache2[i] = Mem[i];
+for (i=0; i < 1024; i = i + 1) cache1[i] = Mem[i];
+IFIRreg = {cache1[0], cache1[1] ,cache1[2] ,cache1[3]};
 //TODO
 end
-always #2 clock = (~clock); 
-always #1 microclock = (~microclock);
+always #2 if (MEMbusy==0 || clock==1) clock = (~clock); 
 
 //IF
 assign IFPC = PC;
 assign IFPC4 = PC + 4;
-assign IFIR = (SMC2)? IDEXB : {Mem[PC], Mem[PC+1], Mem[PC+2], Mem[PC+3]};
+assign IFIR = (SMC2)? IDEXB : IFIRreg;//{Mem[PC], Mem[PC+1], Mem[PC+2], Mem[PC+3]};//!
 assign PCNEXT = (BRANCH)? PCBRANCH : IFPC4;
 
 //ID
@@ -90,7 +98,7 @@ assign MEB = EXMEB;
 
 assign MEDES = EXMEDES;
 
-assign MEDATA = {Mem[MEALU], Mem[MEALU+1] ,Mem[MEALU+2] ,Mem[MEALU+3]} ;
+assign MEDATA = MEDATAreg;//{Mem[MEALU], Mem[MEALU+1] ,Mem[MEALU+2] ,Mem[MEALU+3]} ;//!
 
 //WB
 assign WBDATA = MEWBDATA;
@@ -102,11 +110,15 @@ Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR,
 
 always @(PC)
 begin
-	if (PC > FINISHPC)
+	if (PC > FINISHPC) #12
 	begin
+	for (i = 0; i < 1024; i=i+1)
+		cache2[ {cache1add[9:0],i[9:0]} % 16384 ] = cache1[i];
+	for (i = 0; i < 16384; i=i+1)
+		Mem[ {cache2add[5:0],i[13:0]}] = cache2[i];
 	for (i = 0; i < 32; i = i + 1 )
 	$display("%d in REG[%d]",Regs[i],i);
-	for (i = 524288; i < 524400; i = i + 1 )
+	for (i = 524288; i < 524310; i = i + 1 )
 	$display("%d in MEM[%d]",Mem[i],i);
 	for (i = 0; i < 8; i = i + 1 )
 	$display("%d in MEM[%d]",Mem[i],i);
@@ -120,72 +132,165 @@ begin
 	$display("Time %0d! PC:%h, IDIR:%h, FWDA:%0b,FWDB:%0b", $time, PC, IDIR, FWDA,FWDB);
 	//$display("Time %0d! PC:%0d!IDIR:%0h, rs %0d,rt %0d,IDA %0h,IDB %0h,IMM %0h,MEALU %0h,FWDA:%0b,FWDB:%0b,EWREG%0d,EXDES%0d ,ALUC %0b,EALUC,%0b,EXA %0h,EXB %0h,EXALU %0h,", $time, PC, IDIR,IDIR[25:21],IDIR[20:16],IDA,IDB,IDIMM,MEALU,FWDA,FWDB,EWREG,EXDES,ALUC,EALUC,EXA,EXB,EXALU);
 	$display("---");
-
+	
 	//IFID
 	if (~WPCIR)	
 	begin
-		PC <= #1 PCNEXT;
-		IFIDPC4 <= #1 IFPC4;
-		IFIDPC <= #1 IFPC;
-		if (~BRANCH) IFIDIR <= #1 IFIR; 
+		PC <=  PCNEXT;
+		IFIDPC4 <=  IFPC4;
+		IFIDPC <=  IFPC;
+		if (~BRANCH) IFIDIR <=  IFIR; 
 		else begin
-			IFIDPC <= #1 {32{1'b1}};
-			IFIDIR <= #1 {32{1'b0}};
-			$display("# BRANCH to 'h%h ,and IFIDIR will be flushed", PCNEXT);
+			IFIDPC <=  {32{1'b1}};
+			IFIDIR <=  {32{1'b0}};
+			//$display("# BRANCH to 'h%h ,and IFIDIR will be flushed", PCNEXT);
 		end
 		
 	end
 	if (WPCIR && SMC)
 	begin
-		$display("# SMC: 'h%h change to 'h%h at PC 'h%h", IFIDIR, IDEXB , IDPC);
-		IFIDIR <= #1 IDEXB;
+		//$display("# SMC: 'h%h change to 'h%h at PC 'h%h", IFIDIR, IDEXB , IDPC);
+		IFIDIR <=  IDEXB;
 		
 	end
 	//IDEX
-	IDEXA <= #1 IDA;
-	IDEXB <= #1 IDB;
-	IDEXIMM <= #1 IDIMM;
-	IDEXDES <= #1 IDDES;
+	IDEXA <=  IDA;
+	IDEXB <=  IDB;
+	IDEXIMM <=  IDIMM;
+	IDEXDES <=  IDDES;
 	
-	EWREG <= #1 WREG;
-	EM2REG <= #1 M2REG;
-	EWMEM <= #1 WMEM;
-	EALUIMM <= #1 ALUIMM;
-	ESHIFT <= #1 SHIFT;
-	EALUC <= #1 ALUC;
+	EWREG <=  WREG;
+	EM2REG <=  M2REG;
+	EWMEM <=  WMEM;
+	EALUIMM <=  ALUIMM;
+	ESHIFT <=  SHIFT;
+	EALUC <=  ALUC;
 	
 	//EXME
-	EXMEALU <= #1 EXALU;
-	EXMEB <= #1 IDEXB; //important
-	EXMEDES <= #1 EXDES;
+	EXMEALU <=  EXALU;
+	EXMEB <=  IDEXB; //important
+	EXMEDES <=  EXDES;
 	
-	MWREG <= #1 EWREG;
-	MM2REG <= #1 EM2REG;
-	MWMEM <= #1 EWMEM;
+	MWREG <=  EWREG;
+	MM2REG <=  EM2REG;
+	MWMEM <=  EWMEM;
 	
 	//MEWB
-	MEWBDATA <= #1 MEDATA;
-	MEWBALU <= #1 MEALU;
-	MEWBDES <= #1 MEDES;
+	MEWBDATA <=  MEDATA;
+	MEWBALU <=  MEALU;
+	MEWBDES <=  MEDES;
 	
-	WWREG <= #1 MWREG;
-	WM2REG <= #1 MM2REG;
+	WWREG <=  MWREG;
+	WM2REG <=  MM2REG;
 	
-end
-
-always @(negedge clock)
-begin
+	i = #1 i;
+	//write
 	if (WWREG) 
 	begin
 		$display("# Store 'h%h in REG[%d]",WBWEDATA,MEWBDES);
-		Regs[MEWBDES] <= #1 WBWEDATA;
+		Regs[MEWBDES] <=  WBWEDATA;
 	end
 	
 	if (MWMEM)
 	begin	
 		$display("# Store 'h%h in MEM[%h]",MEB,MEALU>>2);
-		{Mem[MEALU], Mem[MEALU+1] ,Mem[MEALU+2] ,Mem[MEALU+3]} <= #1 MEB;
+		begin
+			//write
+			MEMbusy = 1;
+			if (cache1add == MEALU / 1024) 
+			begin
+				$display("# write in cache1");
+				{cache1[MEALU%1024], cache1[MEALU%1024+1] ,cache1[MEALU%1024+2] ,cache1[MEALU%1024+3]} = #3 MEB;
+			end
+			else
+				if (cache2add == MEALU / 16384) 
+				begin
+					$display("# write in cache2");
+					{cache2[MEALU%16384], cache2[MEALU%16384+1] ,cache2[MEALU%16384+2] ,cache2[MEALU%16384+3]} = #5 MEB;
+				end
+				else
+					{Mem[MEALU], Mem[MEALU+1] ,Mem[MEALU+2] ,Mem[MEALU+3]} =#10  MEB;
+			//MEMbusy = 0;
+		end
 	end
+	
+	//i = #1 i;
+	//read
+	if (MM2REG ==1)
+		begin
+			//read
+			MEMbusy = 1;
+			if (cache1add == MEALU / 1024) 
+			begin
+				$display("# read in cache1 #2");
+				MEDATAreg = #3 {cache1[MEALU%1024], cache1[MEALU%1024+1] ,cache1[MEALU%1024+2] ,cache1[MEALU%1024+3]};
+			end
+			else
+			begin
+				for (i = 0; i < 1024; i=i+1)
+					cache2[ {cache1add[9:0],i[9:0]} % 16384 ] = cache1[i];
+				if (cache2add == MEALU / 16384) 
+				begin
+					$display("# read in cache2 #2");
+					MEDATAreg = #5 {cache2[MEALU%16384], cache2[MEALU%16384+1] ,cache2[MEALU%16384+2] ,cache2[MEALU%16384+3]};
+				end
+				else
+					begin
+						for (i = 0; i < 16384; i=i+1)
+							Mem[ {cache2add[5:0],i[13:0]}] = cache2[i];
+						MEDATAreg = #10 {Mem[MEALU], Mem[MEALU+1] ,Mem[MEALU+2] ,Mem[MEALU+3]};
+						$display("# cache2 fresh");
+						cache2add = MEALU / 16384;
+						for (i = 0; i < 16384; i=i+1)
+							 cache2[i] = Mem[ {cache2add[5:0],i[13:0]}];
+					end//cache2
+				$display("# cache1 fresh");
+				cache1add = MEALU / 1024;
+				for (i = 0; i < 1024; i=i+1)
+					 cache1[i] = cache2[ {cache1add[9:0],i[9:0]} % 16384 ];
+			end//cache1
+			//MEMbusy = 0;
+			$display("MEDATAreg %h, MEALU %h", MEDATAreg,MEALU);
+		end
+		
+			MEMbusy = 1;
+			if (cache1add == PC / 1024) 
+			begin
+				$display("# read in cache1");
+				IFIRreg = #3 {cache1[PC%1024], cache1[PC%1024+1] ,cache1[PC%1024+2] ,cache1[PC%1024+3]};
+			end
+			else
+			begin
+				for (i = 0; i < 1024; i=i+1)
+					cache2[ {cache1add[9:0],i[9:0]} % 16384 ] = cache1[i];
+				if (cache2add == PC / 16384) 
+				begin
+					$display("# read in cache2");
+					IFIRreg = #5 {cache2[PC%16384], cache2[PC%16384+1] ,cache2[PC%16384+2] ,cache2[PC%16384+3]};
+				end
+				else
+					begin
+						for (i = 0; i < 16384; i=i+1)
+							Mem[ {cache2add[5:0],i[13:0]}] = cache2[i];
+						IFIRreg = #10 {Mem[PC], Mem[PC+1] ,Mem[PC+2] ,Mem[PC+3]};
+						$display("# cache2 fresh");
+						cache2add = PC / 16384;
+						for (i = 0; i < 16384; i=i+1)
+							 cache2[i] = Mem[ {cache2add[5:0],i[13:0]}];
+					end//cache2
+				$display("# cache1 fresh");
+				cache1add = PC / 1024;
+				for (i = 0; i < 1024; i=i+1)
+					 cache1[i] = cache2[ {cache1add[9:0],i[9:0]} % 16384 ];
+			end//cache1
+			MEMbusy = 0;
+		$display("IFIRreg %h", IFIRreg);
+	
+end
+
+always @(negedge clock)
+begin
+	
 end
 
 endmodule
