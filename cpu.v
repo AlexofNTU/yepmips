@@ -1,6 +1,6 @@
 `include "alu.v"
 `include "controler.v"
-module CPU ();
+module CPU();
 
 parameter FINISHPC = 100000, MEMSIZE=1048576;
 reg[31:0] 	i;
@@ -14,7 +14,7 @@ reg[31:0] 	PC, Regs[31:0],  // IMem[1023:0], DMem[1023:0],
 			
 reg[4:0]	IDEXDES, EXMEDES, MEWBDES;
 
-wire 		WPCIR, BRANCH, SMC, SMC2, DBP, DBPS,
+wire 		FIN, WPCIR, BRANCH, SMC, SMC2, DBP, DBPS,
 			WREG, M2REG, WMEM, 
 			ALUIMM, SHIFT,IDEQU, SEXT, REGRT, JUMP, JR, JAL;
 reg			EWREG, EM2REG, EWMEM,  EALUIMM, ESHIFT,
@@ -24,7 +24,7 @@ wire[1:0]	FWDB, FWDA;
 reg[3:0]	EALUC;
 wire[3:0]	ALUC;
 
-reg			MEMbusy;
+reg			EFIN, MEMbusy;
 reg[31:0]	IFIRreg, MEDATAreg;
 wire[31:0]	IFPC, IFPC4, IFIR, PCNEXT,
 			IDPC,IDIR, IDPC4, IDA, IDB, PCBRANCH, IDIMM,
@@ -40,6 +40,7 @@ initial begin
 for (i=0; i < MEMSIZE; i = i + 1) Mem[i] = {8{1'b0}};
 for (i=0; i < 32; i = i + 1) Regs[i] = {32{1'b0}};
 clock = 0;
+EFIN = 0;
 MEMbusy = 0;
 PC = 0;
 IFIDIR = {32{1'b0}};
@@ -106,13 +107,13 @@ assign WBALU = MEWBALU;
 assign WBWEDATA = (WM2REG) ? WBDATA : WBALU ; 
 
 //control
-Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP, JR, JAL, EWMEM, EXALU, IFPC, IDPC ,SMC, SMC2, DBP ,DBPS);
+Controler Control(IDIR, MEDES, EXDES,IDEQU, EWREG, EM2REG, MWREG, MM2REG, WPCIR, BRANCH, WREG, M2REG, WMEM, ALUC, SHIFT, ALUIMM, SEXT, REGRT, FWDB, FWDA, JUMP, JR, JAL, EWMEM, EXALU, IFPC, IDPC ,SMC, SMC2, DBP ,DBPS, FIN);
 
 integer handle;
 
-always @(PC)
+always @(EFIN)
 begin
-	if (PC > FINISHPC) #200
+	if (EFIN == 1) #200
 	begin
 	handle = $fopen("test.out");
 	for (i = 0; i < 1024; i=i+1)
@@ -128,15 +129,16 @@ begin
 	
 	for (i = 0; i < 40; i = i + 4 )
 	begin
-		$display("%d in MEM[%d]",Mem[i],i);
+		
 		$fdisplay(handle,"%b%b%b%b", Mem[i], Mem[i+1], Mem[i+2] ,Mem[i+3]);
 	end
-	
+	for (i = 0; i < 40; i = i + 1 ) $display("%d in MEM[%d]",Mem[i],i);
 	for (i = 524288; i < 524328; i = i + 4 )
 	begin
-		$display("%d in MEM[%d]",Mem[i],i);
+		
 		$fdisplay(handle,"%b%b%b%b", Mem[i], Mem[i+1], Mem[i+2] ,Mem[i+3]);
 	end
+	for (i = 524288; i < 524328; i = i + 1 ) $display("%d in MEM[%d]",Mem[i],i);
 	$fclose(handle);
 	$finish;
 	end
@@ -174,6 +176,8 @@ begin
 	IDEXB <=  IDB;
 	IDEXIMM <=  IDIMM;
 	IDEXDES <=  IDDES;
+	
+	EFIN <= FIN;
 	
 	EWREG <=  WREG;
 	EM2REG <=  M2REG;
@@ -301,7 +305,7 @@ begin
 			end//cache1
 			MEMbusy = 0;
 		//$display("IFIRreg %h", IFIRreg);
-	
+	i = #1 i;
 end
 
 always @(negedge clock)
